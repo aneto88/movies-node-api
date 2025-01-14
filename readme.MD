@@ -1,6 +1,6 @@
 # Sobre  
 API desenvolvida utilizando:  
-- NodeJs  
+- NodeJs >= v18
 - Typescript  
 - Express.js  
 - TypeORM com banco de dados SQLite3.  
@@ -9,7 +9,7 @@ API desenvolvida utilizando:
 Para maiores informações sobre requisitos e suas especificações, consulte o arquivo: `/docs/Especificação Backend.pdf`.
 
 # Pré Requisitos  
-É necessário ter previamente instalado no local de execução o NodeJS e npm.  
+É necessário ter previamente instalado no local de execução o NodeJS(>=v18) e npm.  
 
 Ref: https://nodejs.org/en/download  
 

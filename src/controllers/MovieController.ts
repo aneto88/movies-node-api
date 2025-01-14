@@ -302,7 +302,7 @@ export class MovieController {
 
     /**
      * @swagger
-     * /api/movies/producer-intervals:
+     * /api/movies/awards-interval:
      *   get:
      *     summary: Calcula intervalos de prêmios dos produtores
      *     responses:
@@ -320,7 +320,7 @@ export class MovieController {
      *                     producer:
      *                       type: string
      *                     intervals:
-     *                       type: array
+     *                       type: integer
      *                       items:
      *                         type: object
      *                         properties:
@@ -328,6 +328,26 @@ export class MovieController {
      *                             type: integer
      *                           endYear:
      *                             type: integer
+     *             examples:
+     *               application/json:
+     *                 value: {
+     *                   "min": [
+     *                     {
+     *                       "producer": "Test X",
+     *                       "previousWin": 1990,
+     *                       "followingWin": 1991,
+     *                       "interval": 1
+     *                     }
+     *                   ],
+     *                   "max": [
+     *                     {
+     *                       "producer": "Test Y",
+     *                       "previousWin": 200,
+     *                       "followingWin": 2015,
+     *                       "interval": 15
+     *                     }
+     *                   ]
+     *                 }
      *       500:
      *         description: Falha ao calcular intervalos
      */

@@ -1,10 +1,11 @@
 import { DataSource } from "typeorm";
 import { Movie } from "../models/Movie";
 import path from "path";
+import { initializeDataFromCsv } from "./initializeData";
 
 export const AppDataSource = new DataSource({
     type: "sqlite",
-    database: path.resolve(__dirname, "..", "..", "database.sqlite"),
+    database: ":memory",
     synchronize: true,
     logging: false,
     entities: [Movie],
@@ -13,10 +14,9 @@ export const AppDataSource = new DataSource({
 });
 
 // Função para inicializar a conexão com o banco
-export const initializeDatabase = async () => {
+export async function initializeDatabase(): Promise<void>{
     try {
         await AppDataSource.initialize();
-        console.log("Data Source has been initialized!");
     } catch (error) {
         console.error("Error during Data Source initialization:", error);
         throw error;

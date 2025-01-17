@@ -353,7 +353,7 @@ export class MovieController {
      */
     async getProducerIntervals(req: Request, res: Response) {
         try {
-            const movies = await this.service.findAll();
+            const movies = await this.service.getProducersWinners();
             const intervals = AwardsIntervalService.calculateIntervals(movies);
             return res.json(intervals);
         } catch (error) {

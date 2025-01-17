@@ -16,8 +16,6 @@ export async function initializeDataFromCsv() {
         // Importa os dados do CSV
         const movies = await CsvImportService.parseCsv(csvContent);
         await movieService.saveMany(movies);
-
-        console.log('Initial data imported successfully');
     } catch (error) {
         console.error('Error importing initial data:', error);
         throw error;

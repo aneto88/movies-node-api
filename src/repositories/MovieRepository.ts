@@ -41,4 +41,15 @@ export class MovieRepository {
         await this.repository.clear();
     }
 
+    async getProducersWinners(): Promise<Movie[]> {
+        return await this.repository.find({
+            where: {
+                winner: true
+            },
+            order: {
+                year: "ASC"
+            }
+        });
+    }
+
 }

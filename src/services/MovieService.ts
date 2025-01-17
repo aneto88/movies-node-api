@@ -37,5 +37,8 @@ export class MovieService {
         await this.repository.deleteAll();
     }
 
+    async getProducersWinners(): Promise<Movie[]>  {
+        return await this.repository.getProducersWinners();
+    }
 
 }
